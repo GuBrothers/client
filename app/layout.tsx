@@ -1,3 +1,6 @@
+import './globals.css';
+
+import { Nav } from '@/components/nav';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -15,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Nav />
+        <main className="w-screen mx-auto max-w-6xl">
+          <div>{children}</div>
+        </main>
+      </body>
     </html>
   );
 }
